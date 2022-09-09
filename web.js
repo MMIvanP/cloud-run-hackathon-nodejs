@@ -28,7 +28,7 @@ app.post('/', function (req, res) {
     console.log(myLocation);
     console.log(`Where am I facing`);
     console.log(myDirection);
-    
+  
     res.send(moves[Math.floor(Math.random() * moves.length)]);
   }catch{}
   
