@@ -15,7 +15,7 @@ app.post('/', function (req, res) {
   
   // TODO add your implementation here to replace the random response
   try{
-  console.log(`WHERE AM I? ${req.body.arena.state.myURL}`)
+  console.log(`WHERE AM I? ${req.body.arena.state}`)
   }catch{};
   
   res.send(moves[Math.floor(Math.random() * moves.length)]);
