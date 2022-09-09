@@ -30,11 +30,9 @@ app.post('/', function (req, res) {
     console.log(myDirection);
     
     everyone = [];
-
-    for (let i = 0; i < everyoneState.keys().length ; i++) {
-      // everyone.push(everyoneState[everyoneState.keys()[i]]);
-    }
-    console.log(everyone);
+    try{
+      console.log(everyoneState.keys());
+    }catch{}
 
   }catch{};
 
