@@ -13,7 +13,9 @@ app.post('/', function (req, res) {
   const moves = ['F', 'T', 'L', 'R'];
   
   // TODO add your implementation here to replace the random response
-  console.log(`WHERE AM I? ${req.body[state]['https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app']}`)
+  try{
+  console.log(`WHERE AM I? ${req.body.state}`)
+  }catch{};
   
   res.send(moves[Math.floor(Math.random() * moves.length)]);
 });
