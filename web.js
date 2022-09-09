@@ -32,19 +32,19 @@ app.post('/', function (req, res) {
     everyone = [];
 
     for (let i = 0; i < everyoneState.keys().length ; i++) {
-      everyone.push(everyoneState[everyoneState.keys()[i]]);
+      // everyone.push(everyoneState[everyoneState.keys()[i]]);
     }
     console.log(everyone);
 
   }catch{};
 
   if (wasHit){
-    if (myX === 0){
-
-    }
+    res.send('F');
+  }
+  else{
+    res.send(moves[Math.floor(Math.random() * moves.length)]);
   }
   
-  res.send(moves[Math.floor(Math.random() * moves.length)]);
 });
 
 app.listen(process.env.PORT || 8080);
