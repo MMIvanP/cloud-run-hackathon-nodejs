@@ -11,10 +11,11 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   console.log(req.body);
   const moves = ['F', 'T', 'L', 'R'];
+  const myURL = 'https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app';
   
   // TODO add your implementation here to replace the random response
   try{
-  console.log(`WHERE AM I? ${req.body.arena}`)
+  console.log(`WHERE AM I? ${req.body.arena.state.myURL}`)
   }catch{};
   
   res.send(moves[Math.floor(Math.random() * moves.length)]);
