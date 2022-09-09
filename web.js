@@ -10,21 +10,39 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   console.log(req.body);
-  const moves = ['F', 'T', 'L', 'R'];
+  const moves = ['F', 'L', 'R'];
   const myURL = 'https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app';
+  const everyoneState = req.body.arena.state;
   const myState = req.body.arena.state['https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app'];
   const myLocation = [myState.x, myState.y];
+  const myX = myState.x;
+  const myY = myState.y;
   const myDirection = myState.direction;
+  const wasHit = myState.wasHit;
   
   // TODO add your implementation here to replace the random response
   try{
-  console.log('Here are all the states');
-  console.log(req.body.arena.state);
-  console.log(`WHERE AM I?`);
-  console.log(myLocation);
-  console.log(`Where am I facing`);
-  console.log(myDirection);
+    console.log('Here are all the states');
+    console.log(req.body.arena.state);
+    console.log(`WHERE AM I?`);
+    console.log(myLocation);
+    console.log(`Where am I facing`);
+    console.log(myDirection);
+    
+    everyone = [];
+
+    for (let i = 0; i < everyoneState.keys().length ; i++) {
+      everyone.push(everyoneState[everyoneState.keys()[i]]);
+    }
+    console.log(everyone);
+
   }catch{};
+
+  if (wasHit){
+    if (myX === 0){
+
+    }
+  }
   
   res.send(moves[Math.floor(Math.random() * moves.length)]);
 });
