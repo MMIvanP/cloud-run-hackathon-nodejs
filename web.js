@@ -31,7 +31,7 @@ app.post('/', function (req, res) {
     
     everyone = [];
     try{
-      console.log(everyoneState.keys());
+      console.log(Object.keys(everyoneState));
     }catch{};
 
   }catch{};
