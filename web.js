@@ -32,7 +32,7 @@ app.post('/', function (req, res) {
     everyone = [];
     try{
       console.log(everyoneState.keys());
-    }catch{}
+    }catch{};
 
   }catch{};
 
