@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   console.log(req.body);
-  const moves = ['F', 'L', 'R'];
+  const moves = ['F', , 'T','L', 'R'];
   const myURL = 'https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app';
   const everyoneState = req.body.arena.state;
   const myState = req.body.arena.state['https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app'];
@@ -29,19 +29,8 @@ app.post('/', function (req, res) {
     console.log(`Where am I facing`);
     console.log(myDirection);
     
-    everyone = [];
-    try{
-      console.log(Object.keys(everyoneState));
-    }catch{};
-
-  }catch{};
-
-  if (wasHit){
-    res.send('F');
-  }
-  else{
     res.send(moves[Math.floor(Math.random() * moves.length)]);
-  }
+  }catch{}
   
 });
 
