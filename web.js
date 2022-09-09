@@ -12,13 +12,18 @@ app.post('/', function (req, res) {
   console.log(req.body);
   const moves = ['F', 'T', 'L', 'R'];
   const myURL = 'https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app';
+  const myState = req.body.arena.state['https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app'];
+  const myLocation = [myState.x, myState.y];
+  const myDirection = myState.direction;
   
   // TODO add your implementation here to replace the random response
   try{
   console.log('Here are all the states');
   console.log(req.body.arena.state);
   console.log(`WHERE AM I?`);
-  console.log(req.body.arena.state['https://cloud-run-hackathon-nodejs-esifpexcba-uc.a.run.app']);
+  console.log(myLocation);
+  console.log(`Where am I facing`);
+  console.log(myDirection);
   }catch{};
   
   res.send(moves[Math.floor(Math.random() * moves.length)]);
